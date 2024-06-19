@@ -12,10 +12,12 @@ pub struct NewsArticle {
 
 // now let's implement the Summary for the News Article
 impl Summary for NewsArticle {
+    /*
     fn summarize(&self) -> String {
-        // last statement without ; is returned!
-        format!("{}, by {}", self.headline, self.author)
-    }
+          // last statement without ; is returned!
+          format!("{}, by {}", self.headline, self.author)
+      }
+    */
 }
 
 // define a tweet
@@ -37,7 +39,10 @@ impl Summary for Tweet {
 // traits allow us to define shared methods across different types
 pub trait Summary {
     // summarize the data
-    fn summarize(&self) -> String;
+    fn summarize(&self) -> String {
+        // implement default return value
+        String::from("(Read more..)")
+    }
 }
 
 fn main() {
